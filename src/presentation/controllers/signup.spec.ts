@@ -1,6 +1,6 @@
 import { SignUpController } from './signup'
 
-describe('SignUpController', () => {
+describe('SignUp Controller', () => {
   test('', () => {
     const sut = new SignUpController()
     const httpRequest = {
@@ -12,5 +12,6 @@ describe('SignUpController', () => {
     }
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
+    expect(httpResponse.body).toEqual(new Error('Missing param: name'))
   })
 })
