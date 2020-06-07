@@ -3,10 +3,20 @@
 
 module.exports = {
   roots: ['<rootDir>/src'],
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
+  collectCoverageFrom: ['./src/**/*.ts',
+    '!<rootDir>/src/**/*-protocol.ts',
+    '!**/protocols/**'],
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
   transform: {
     '.+\\.ts$': 'ts-jest'
   },
-};
+  moduleFileExtensions: [
+    'js',
+    'ts',
+    'tsx',
+    'json',
+    'node'
+  ],
+  testMatch: ['**/src/**/*.spec.ts?(x)']
+}
