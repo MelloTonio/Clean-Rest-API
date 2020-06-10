@@ -6,8 +6,10 @@ export class SignUpController implements Controller {
   private readonly emailValidator: EmailValidator
   private readonly AddAccount: AddAccount
   // Como não é responsibilidade desta classe validar o email, separamos as responsabilidades para outra
+  // Logo qualquer alteração que tenhamos que fazer relacionada com validação de email ou adicionar usuarios
+  // poderá ser feita em outro local, fazendo com que não haja necessidade de alteração na classe principal.
   constructor (emailValidator: EmailValidator, addAccount: AddAccount) {
-    this.emailValidator = emailValidator
+    this.emailValidator = emailValidator // Instanciando dessa forma permitimos que qualquer alteração possa ser feita direta na respectiva classe e não nessa.
     this.AddAccount = addAccount
   }
 

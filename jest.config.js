@@ -17,6 +17,5 @@ module.exports = {
     'tsx',
     'json',
     'node'
-  ],
-  testMatch: ['**/src/**/*.spec.ts?(x)']
+  ]
 }
